@@ -1,213 +1,131 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KS Digital Services | Premium Digital Solutions</title>
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Load CSS with media="print" and swap on load -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    
-    <!-- Minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         :root {
-            --color-primary: #4361ee;
-            --color-primary-dark: #3a0ca3;
-            --color-primary-light: #4cc9f0;
-            --color-secondary: #f72585;
-            --color-secondary-dark: #b5179e;
-            --color-accent: #4ade80;
-            --color-accent-dark: #16a34a;
-            --color-text-light: #f8fafc;
-            --color-text-medium: #cbd5e1;
-            --color-text-dark: #0f172a;
-            --color-bg-dark: #0f172a;
-            --color-bg-card: rgba(30,41,59,.7);
-            --color-border: rgba(148,163,184,.3);
-            --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
-            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,.5);
-            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,.3);
-            --radius-xl: 1.5rem;
-            --radius-lg: 1rem
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #f72585;
+            --accent: #4ade80;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --border: #e2e8f0;
         }
+        
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
         }
+        
         body {
-            font-family: Poppins, sans-serif;
-            background: var(--color-bg-dark);
-            color: var(--color-text-medium);
-            min-height: 100vh;
-            overflow-x: hidden;
-            line-height: 1.6
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
         }
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1
-        }
+        
         .navbar {
-            background: rgba(15,23,42,.8);
-            backdrop-filter: blur(10px);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             padding: 1rem 0;
-            border-bottom: 1px solid var(--color-border);
-            z-index: 1000
         }
+        
         .navbar-brand {
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 0 auto;
-            display: block;
-            background: linear-gradient(to right, #f72585, #4361ee, #4cc9f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -.5px;
-            width: 100%;
-            text-align: center;
-        }
-        .nav-link {
-            color: var(--color-text-medium);
-            font-weight: 500;
-            transition: all .3s ease;
-            position: relative
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width .3s ease
-        }
-        .nav-link:hover {
-            color: var(--color-text-light)
-        }
-        .nav-link:hover::after {
-            width: 100%
-        }
-        .hero-section {
-            min-height: 100vh;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px
+            gap: 10px;
         }
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 800px;
-            margin: 0 auto;
+        
+        .navbar-brand i {
+            color: var(--secondary);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 5rem 0;
             text-align: center;
-            padding: 2rem
         }
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #f72585, #4361ee, #4cc9f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            animation: gradientShift 8s infinite alternate
         }
-        @keyframes gradientShift {
-            0% {
-                background-position: 0 50%
-            }
-            100% {
-                background-position: 100% 50%
-            }
-        }
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            color: var(--color-text-light);
-            opacity: .9;
+        
+        .hero p {
+            font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto
+            margin: 0 auto 2rem;
+            opacity: 0.9;
         }
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(76,201,240,.1);
-            backdrop-filter: blur(5px);
-            z-index: 1;
-            animation: float 15s infinite ease-in-out
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .floating-element:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
-        .floating-element:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            top: 20%;
-            right: 10%;
-            animation-delay: 2s;
-            background: rgba(247,37,133,.1)
+        
+        .btn-secondary:hover {
+            background-color: #d11479;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .floating-element:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 4s;
-            background: rgba(67,97,238,.1)
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0)
-            }
-            50% {
-                transform: translateY(-40px) rotate(10deg)
-            }
-            100% {
-                transform: translateY(0) rotate(0)
-            }
-        }
-        .services-section {
-            padding: 4rem 0;
-            position: relative
-        }
+        
         .section-title {
             text-align: center;
-            margin-bottom: 2rem;
-            position: relative
+            margin-bottom: 3rem;
         }
+        
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            color: var(--color-text-light);
+            color: var(--dark);
             margin-bottom: 1rem;
             position: relative;
-            display: inline-block
+            display: inline-block;
         }
+        
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -216,425 +134,178 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px
+            background: var(--primary);
+            border-radius: 2px;
         }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 2rem
         }
+        
+        .services-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
         .service-card {
-            background: var(--color-bg-card);
-            border-radius: var(--radius-xl);
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid var(--color-border);
-            transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            z-index: 2;
-            backdrop-filter: blur(10px)
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid var(--border);
         }
+        
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,.4);
-            border-color: rgba(76,201,240,.5)
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-        .card-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
+        
+        .card-icon {
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gradient-primary);
-        }
-        .card-img .service-icon {
-            font-size: 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            opacity: 0.8;
+            font-size: 3rem;
         }
-        .service-card:hover .card-img {
-            background: var(--gradient-secondary);
-        }
+        
         .card-content {
-            padding: 1.8rem
+            padding: 1.5rem;
         }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-text-light);
-            margin-bottom: 1rem
-        }
-        .card-text {
-            margin-bottom: 1.5rem;
-            min-height: 80px
-        }
-        .card-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: .8rem 1.8rem;
-            border-radius: 50px;
+        
+        .card-content h3 {
+            font-size: 1.3rem;
             font-weight: 600;
-            transition: all .3s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            border: none
+            margin-bottom: 0.8rem;
+            color: var(--dark);
         }
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: #fff
+        
+        .card-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
         }
-        .btn-secondary {
-            background: var(--gradient-secondary);
-            color: #fff
-        }
-        .card-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255,255,255,.3), rgba(255,255,255,.2), rgba(255,255,255,0));
-            transform: translateX(-100%);
-            transition: transform .4s ease
-        }
-        .card-btn:hover::after {
-            transform: translateX(100%)
-        }
-        .card-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,.2)
-        }
-        .whatsapp-float {
-            position: fixed;
-            width: 70px;
-            height: 70px;
-            bottom: 40px;
-            right: 40px;
-            background: var(--gradient-primary);
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 2rem;
-            box-shadow: 0 10px 30px rgba(67,97,238,.4);
-            z-index: 1000;
+        
+        .card-actions {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all .3s ease;
-            animation: pulse 2s infinite
+            gap: 0.8rem;
         }
-        .whatsapp-float:hover {
-            transform: translateY(-8px) rotate(10deg);
-            box-shadow: 0 15px 40px rgba(67,97,238,.6);
-            background: var(--gradient-secondary)
+        
+        .card-btn {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(67,97,238,.7)
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(67,97,238,0)
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(67,97,238,0)
-            }
+        
+        .card-btn.primary {
+            background-color: var(--primary);
+            color: white;
         }
+        
+        .card-btn.primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .card-btn.secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .card-btn.secondary:hover {
+            background-color: #d11479;
+        }
+        
         .testimonials-section {
-            padding: 6rem 0;
-            background: linear-gradient(to bottom, rgba(15,23,42,.9), rgba(15,23,42,1));
-            position: relative
+            padding: 5rem 0;
+            background-color: #f1f5f9;
         }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem
-        }
+        
         .testimonial-card {
-            background: rgba(30,41,59,.7);
-            border-radius: var(--radius-xl);
-            padding: 2.5rem;
-            border: 1px solid var(--color-border);
-            transition: all .3s ease;
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
             position: relative;
-            overflow: hidden
         }
+        
         .testimonial-card::before {
-            content: '';
+            content: """;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary)
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: Georgia, serif;
         }
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg)
-        }
+        
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1.5rem;
             position: relative;
-            padding-left: 1.5rem
+            z-index: 1;
         }
-        .testimonial-text::before {
-            content: "";
-            position: absolute;
-            left: -10px;
-            top: -20px;
-            font-size: 4rem;
-            color: rgba(76,201,240,.2);
-            font-family: Georgia, serif
-        }
+        
         .testimonial-author {
             font-weight: 600;
-            color: var(--color-text-light);
-            display: flex;
-            align-items: center;
-            gap: .8rem
-        }
-        .testimonial-author::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--gradient-primary)
+            color: var(--dark);
         }
         
-        /* SERVICES NAVIGATION BAR - HIGHLIGHTED */
-        .services-nav-container {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            margin: 0 auto 1.5rem;
-            max-width: 1400px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .services-nav-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        
-        .services-nav-container:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .services-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-        
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            background: rgba(30, 41, 59, 0.7);
-            color: var(--color-text-light);
-            border-radius: 50px;
-            text-decoration: none;
-            border: 1px solid var(--color-border);
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 1rem;
-            white-space: nowrap;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .service-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-            z-index: -1;
-        }
-        
-        .service-link:hover {
-            color: #fff;
-            border-color: transparent;
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-link:hover::before {
-            width: 100%;
-        }
-        
-        .service-link i {
-            margin-right: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-link:hover i {
-            transform: rotate(10deg) scale(1.2);
-        }
-        
-        /* ACTIVE STATE */
-        .service-link.active {
-            background: var(--gradient-primary);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
-        }
-        
-        .service-link.active i {
-            transform: scale(1.1);
-        }
-        
-        /* FOOTER ENHANCEMENTS */
         .site-footer {
-            background: linear-gradient(135deg, rgba(2,6,23,0.95) 0%, rgba(15,23,42,0.95) 100%);
-            padding: 5rem 0 0;
-            border-top: 1px solid var(--color-border);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .site-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-            animation: gradientShift 8s infinite alternate;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 1;
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 0;
         }
         
         .footer-logo {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
             margin-bottom: 1.5rem;
             display: inline-block;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .footer-logo::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
         }
         
         .footer-about {
             margin-bottom: 1.5rem;
-            max-width: 400px;
-            line-height: 1.8;
+            opacity: 0.8;
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
         }
         
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(30,41,59,.7);
-            color: var(--color-text-light);
-            font-size: 1.3rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--color-border);
-        }
-        
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: var(--gradient-primary);
-            transition: height 0.3s ease;
-            z-index: -1;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
         }
         
         .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(67,97,238,.3);
-            color: #fff;
-            border-color: transparent;
-        }
-        
-        .social-link:hover::before {
-            height: 100%;
+            background-color: var(--primary);
+            transform: translateY(-3px);
         }
         
         .footer-heading {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            color: var(--color-text-light);
-            margin-bottom: 1.8rem;
-            position: relative;
-            padding-bottom: .8rem;
-        }
-        
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            color: white;
         }
         
         .footer-links {
@@ -643,280 +314,79 @@
         }
         
         .footer-links li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         
         .footer-links a {
-            color: var(--color-text-medium);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: .8rem;
-            padding: 0.5rem 0;
-            position: relative;
-            width: fit-content;
-        }
-        
-        .footer-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: var(--color-text-light);
-            transform: translateX(5px);
-        }
-        
-        .footer-links a:hover::after {
-            width: 100%;
-        }
-        
-        .footer-links a i {
-            transition: transform .3s ease;
-            color: var(--color-primary-light);
-        }
-        
-        .footer-links a:hover i {
-            transform: translateX(5px);
+            color: white;
+            padding-left: 5px;
         }
         
         .copyright {
             text-align: center;
-            padding: 2.5rem 2rem;
-            color: var(--color-text-medium);
-            font-size: .9rem;
-            background: rgba(2,6,23,0.8);
-            position: relative;
-        }
-        
-        .copyright::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 1px;
-            background: var(--gradient-primary);
-        }
-        
-        .footer-nav {
             padding: 2rem 0;
-            position: relative;
-            z-index: 1;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
         }
         
-        .footer-nav .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        
-        .footer-nav a {
-            color: var(--color-text-medium);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .footer-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-        
-        .footer-nav a:hover {
-            color: var(--color-text-light);
-        }
-        
-        .footer-nav a:hover::after {
-            width: 100%;
-        }
-        
-        .service-list {
-            list-style: none;
-            padding: 0;
-            margin: 0
-        }
-        .service-list li {
-            padding: .5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-            display: flex;
-            align-items: center
-        }
-        .service-list li:last-child {
-            border-bottom: none
-        }
-        .service-list li i {
-            margin-right: .75rem;
-            color: var(--color-primary-light)
-        }
-        .contact-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
             text-align: center;
-            height: 100%
-        }
-        .contact-card p {
-            margin-bottom: 1.5rem
-        }
-        
-        /* Performance Optimizations */
-        .lazy {
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
         
-        .lazy.loaded {
-            opacity: 1;
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
-        .skeleton {
-            background: linear-gradient(90deg, rgba(30,41,59,0.5) 25%, rgba(67,97,238,0.1) 50%, rgba(30,41,59,0.5) 75%);
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s infinite;
-            border-radius: 8px;
-        }
-        
-        @keyframes skeleton-loading {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
-        
-        /* Hero Section Enhancements */
-        .hero-section {
-            background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.8) 100%);
-        }
-        
-        .hero-btns .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.4s ease;
-        }
-        
-        .hero-btns .btn-primary {
-            background: var(--gradient-primary);
-            border: none;
-        }
-        
-        .hero-btns .btn-outline-light {
-            border: 2px solid rgba(255,255,255,0.3);
-            color: var(--color-text-light);
-        }
-        
-        .hero-btns .btn-outline-light:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.5);
-        }
-        
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3rem
-            }
-            .hero-subtitle {
-                font-size: 1.2rem
-            }
-            .card-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
-            }
-            .services-section {
-                padding: 3rem 0;
-            }
-            .services-nav {
-                gap: 0.8rem;
-            }
-            .service-link {
-                padding: 0.7rem 1.3rem;
-                font-size: 0.95rem;
-            }
-        }
         @media (max-width: 768px) {
-            .hero-btns {
-                flex-direction: column;
-                align-items: center
+            .hero h1 {
+                font-size: 2.2rem;
             }
-            .hero-title {
-                font-size: 2.5rem
+            
+            .hero p {
+                font-size: 1rem;
             }
+            
             .section-title h2 {
-                font-size: 2rem
-            }
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
                 font-size: 1.8rem;
-                bottom: 30px;
-                right: 30px
             }
-            .services-nav {
-                gap: 0.6rem;
-            }
-            .service-link {
-                padding: 0.6rem 1.1rem;
-                font-size: 0.9rem;
-            }
-            .section-title {
-                margin-bottom: 1.5rem;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-        }
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem
-            }
-            .hero-subtitle {
-                font-size: 1rem
-            }
-            .section-title h2 {
-                font-size: 1.8rem
-            }
-            .services-nav {
-                gap: 0.5rem;
-                padding: 0 0.5rem;
-            }
-            .service-link {
-                padding: 0.5rem 0.9rem;
-                font-size: 0.85rem;
-            }
-            .services-section {
-                padding: 2.5rem 0;
+            
+            .card-actions {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-    
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand text-center" href="#">KS DIGITAL SERVICES</a>
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-laptop"></i> KS DIGITAL SERVICES
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -932,7 +402,7 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://maps.app.goo.gl/AyuLvmf3TYjp9fH6A">Maps</a>
+                        <a class="nav-link" href="https://maps.app.goo.gl/AyuLvmf3TYjp9fH6A">Location</a>
                     </li>
                 </ul>
             </div>
@@ -940,295 +410,175 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">Premium Digital Solutions</h1>
-            <p class="hero-subtitle">Your trusted partner for all digital documentation and certification needs. Fast, reliable, and professional services.</p>
-            <div class="hero-btns">
+    <section class="hero">
+        <div class="container">
+            <h1>Premium Digital Solutions</h1>
+            <p>Your trusted partner for all digital documentation and certification needs. Fast, reliable, and professional services.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
                 <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="https://wa.me/7893845696" target="_blank" class="btn btn-outline-light">Contact Us</a>
+                <a href="https://wa.me/7893845696" target="_blank" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
     </section>
     
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-                        
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p class="text-center">Professional solutions for all your documentation needs</p>
+                <p>Professional solutions for all your documentation needs</p>
             </div>
             
-            <div class="card-grid">
+            <div class="row g-4">
                 <!-- Passport Application -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-passport"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Passport Application</h3>
-                        <p>Fast and reliable passport application services with expert guidance.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/passport" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20passport" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Passport Application</h3>
+                            <p>Fast and reliable passport application services with expert guidance.</p>
+                            <div class="card-actions">
+                                <a href="/passport" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20passport" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Marriage Certificate -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-heart-fill"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Marriage Certificate</h3>
-                        <p>Official marriage certificate services with quick processing.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/marriage" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20MARRIAGE%20CERTIFICATE" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Marriage Certificate</h3>
+                            <p>Official marriage certificate services with quick processing.</p>
+                            <div class="card-actions">
+                                <a href="/marriage" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20MARRIAGE%20CERTIFICATE" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Birth Certificate -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-person-vcard"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Birth Certificate</h3>
-                        <p>Get your official birth certificate quickly and easily.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/birth" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20BIRTH%20CERTIFICATE" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Birth Certificate</h3>
+                            <p>Get your official birth certificate quickly and easily.</p>
+                            <div class="card-actions">
+                                <a href="/birth" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20BIRTH%20CERTIFICATE" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                
                 <!-- Food License -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-cup-straw"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Food License</h3>
-                        <p>FSSAI food license registration for restaurants and food businesses.</p>
-                      <div class="d-flex gap-2">
-                            <a href="/foodLicense" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20food%20license" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Food License</h3>
+                            <p>FSSAI food license registration for restaurants and food businesses.</p>
+                            <div class="card-actions">
+                                <a href="/foodLicense" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20food%20license" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Trade License -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-briefcase"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Trade License</h3>
-                        <p>Trade license registration for commercial establishments.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/tradeLicense" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20trade%20license" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Trade License</h3>
+                            <p>Trade license registration for commercial establishments.</p>
+                            <div class="card-actions">
+                                <a href="/tradeLicense" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20trade%20license" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Labour License -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-person-gear"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Labour License</h3>
-                        <p>Labor license registration for businesses with employees.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/labourLicense" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20labour%20license" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>Labour License</h3>
+                            <p>Labor license registration for businesses with employees.</p>
+                            <div class="card-actions">
+                                <a href="/labourLicense" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20labour%20license" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- MSME Certificate -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-building"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">UDYAM Certificate</h3>
-                        <p>MSME/UDYAM registration for small and medium enterprises.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/msme" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20UDYAM/MSME%20CERTIFICATE" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>UDYAM Certificate</h3>
+                            <p>MSME/UDYAM registration for small and medium enterprises.</p>
+                            <div class="card-actions">
+                                <a href="/msme" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20a%20UDYAM/MSME%20CERTIFICATE" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Voter id Card -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <!-- Voter ID Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-person-check"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">VOTER ID CARD</h3>
-                        <p>Voter ID card application and updates with quick processing.</p>
-                        <div class="d-flex gap-2">
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20Voter%20ID" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>VOTER ID CARD</h3>
+                            <p>Voter ID card application and updates with quick processing.</p>
+                            <div class="card-actions">
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20Voter%20ID" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- PAN Card -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="card-icon">
                             <i class="bi bi-credit-card"></i>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">PAN CARD</h3>
-                        <p>PAN card application and correction services with fast delivery.</p>
-                        <div class="d-flex gap-2">
-                            <a href="/pancard" class="card-btn btn btn-primary">
-                                <i class="bi bi-info-circle me-2"></i>Details
-                            </a>
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20PAN%20card" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
+                        <div class="card-content">
+                            <h3>PAN CARD</h3>
+                            <p>PAN card application and correction services with fast delivery.</p>
+                            <div class="card-actions">
+                                <a href="/pancard" class="card-btn primary">Details</a>
+                                <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20PAN%20card" target="_blank" class="card-btn secondary">Apply</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Aadhar Card -->
-                <div class="service-card">
-                    <div class="card-img">
-                        <div class="service-icon">
-                            <i class="bi bi-person-badge"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">AADHAR ADDRESS UPDATE</h3>
-                        <p>Aadhar card address update and correction services.</p>
-                        <div class="d-flex gap-2">
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Update%20My%20Aadhar%20Address" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Utility Services -->
-                <div class="service-card">
-                    <div class="card-content">
-                        <h3 class="card-title">Utility Services</h3>
-                        <ul class="service-list">
-                            <li><i class="bi bi-bus-front"></i> Bus Ticket Booking</li>
-                            <li><i class="bi bi-train-front"></i> Train Ticket Booking</li>
-                            <li><i class="bi bi-bus-front"></i> TTD Bookings</li>
-                        </ul>
-                        <div class="d-flex gap-2">
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20book%20travel%20tickets" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Book Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Exam Applications -->
-                <div class="service-card">
-                    <div class="card-content">
-                        <h3 class="card-title">Exam Applications</h3>
-                        <ul class="service-list">
-                            <li><i class="bi bi-journal-check"></i> TG TET / UGC NET</li>
-                            <li><i class="bi bi-journal-check"></i> EAMCET / Polycet</li>
-                            <li><i class="bi bi-journal-check"></i> ECET / ICET</li>
-                            <li><i class="bi bi-journal-check"></i> PECET / EDCET</li>
-                        </ul>
-                        <div class="d-flex gap-2">
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20apply%20for%20exam" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Other Services -->
-                <div class="service-card">
-                    <div class="card-content">
-                        <h3 class="card-title">Other Services</h3>
-                        <ul class="service-list">
-                            <li><i class="bi bi-building"></i> GST Registration</li>
-                            <li><i class="bi bi-file-earmark-text"></i> ITR Filing</li>
-                            <li><i class="bi bi-pen"></i> Online Form Filling</li>
-                            <li><i class="bi bi-mortarboard"></i> Scholarship Applications</li>
-                        </ul>
-                        <div class="d-flex gap-2">
-                            <a href="https://wa.me/7893845696?text=Hi%20I%20need%20other%20services" target="_blank" class="card-btn btn btn-secondary">
-                                <i class="bi bi-whatsapp me-2"></i>Apply
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Need Something Else -->
-                <div class="service-card">
-                    <div class="card-content contact-card">
-                        <h3 class="card-title">Need Something Else?</h3>
-                        <p>Don't see what you're looking for? Contact us for any special requests or inquiries.</p>
-                        <a href="https://wa.me/7893845696" target="_blank" class="card-btn btn btn-secondary">
-                            <i class="bi bi-whatsapp me-2"></i>WhatsApp Us
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1240,38 +590,50 @@
         <div class="container">
             <div class="section-title">
                 <h2>Client Testimonials</h2>
-                <p class="text-center">Hear from our satisfied customers</p>
+                <p>Hear from our satisfied customers</p>
             </div>
             
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Received my UDYAM Certificate instantly. KS Digital Services made the process so simple and quick!"</p>
-                    <div class="testimonial-author">- Murthy</div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Received my UDYAM Certificate instantly. KS Digital Services made the process so simple and quick!"</p>
+                        <div class="testimonial-author">- Murthy</div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Got my Aadhar Address updated in just 3 days. Their service is efficient and reliable."</p>
-                    <div class="testimonial-author">- Raju Yadav</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Got my Aadhar Address updated in just 3 days. Their service is efficient and reliable."</p>
+                        <div class="testimonial-author">- Raju Yadav</div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Received my trade license within 24 hours. Amazing speed and professionalism!"</p>
-                    <div class="testimonial-author">- Vishnu</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Received my trade license within 24 hours. Amazing speed and professionalism!"</p>
+                        <div class="testimonial-author">- Vishnu</div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Quick service and very helpful, got my PAN in just 1 day. Highly recommended!"</p>
-                    <div class="testimonial-author">- Jyothi</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Quick service and very helpful, got my PAN in just 1 day. Highly recommended!"</p>
+                        <div class="testimonial-author">- Jyothi</div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Saved me a lot of time, excellent experience. Will use their services again for sure."</p>
-                    <div class="testimonial-author">- Renuka</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Saved me a lot of time, excellent experience. Will use their services again for sure."</p>
+                        <div class="testimonial-author">- Renuka</div>
+                    </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Highly recommend for anyone needing quick document services. Professional and reliable."</p>
-                    <div class="testimonial-author">- Shiva</div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Highly recommend for anyone needing quick document services. Professional and reliable."</p>
+                        <div class="testimonial-author">- Shiva</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1279,50 +641,63 @@
     
     <!-- Footer -->
     <footer id="contact" class="site-footer">
-        <div class="footer-content">
-            <div>
-                <div class="footer-logo">KS DIGITAL SERVICES</div>
-                <p class="footer-about">Your trusted partner for all digital documentation and certification needs. Fast, reliable, and professional services.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/7893845696" target="_blank" class="social-link">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/ksdigitalservice/" target="_blank" class="social-link">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@ksdigitalservice" target="_blank" class="social-link">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ksdigitalservices/" target="_blank" class="social-link">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">KS DIGITAL SERVICES</div>
+                    <p class="footer-about">Your trusted partner for all digital documentation and certification needs. Fast, reliable, and professional services.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/7893845696" target="_blank" class="social-link">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ksdigitalservice/" target="_blank" class="social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@ksdigitalservice" target="_blank" class="social-link">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ksdigitalservices/" target="_blank" class="social-link">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 class="footer-heading">Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="/Terms">Terms</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/cancellation">Cancellation</a></li>
+                        <li><a href="/shipping">Shipping</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Passport Application</a></li>
+                        <li><a href="#services">Marriage Certificate</a></li>
+                        <li><a href="#services">Birth Certificate</a></li>
+                        <li><a href="#services">PAN Card</a></li>
+                        <li><a href="#services">Voter ID</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:7893845696"><i class="bi bi-telephone me-2"></i>+91 7893845696</a></li>
+                        <li><a href="mailto:info@ksdigitalservices.com"><i class="bi bi-envelope me-2"></i>info@ksdigitalservices.com</a></li>
+                        <li><a href="https://maps.app.goo.gl/AyuLvmf3TYjp9fH6A" target="_blank"><i class="bi bi-geo-alt me-2"></i>Hyderabad, Telangana</a></li>
+                        <li><a href="#"><i class="bi bi-clock me-2"></i>Mon-Sat: 7:00 AM - 9:30 PM</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div>
-                <h3 class="footer-heading">PAGES</h3>
-                <ul class="footer-links">
-                    <li><a href="/Terms"><i class="bi bi-arrow-right"></i>Terms</a></li>
-                    <li><a href="/privacy"><i class="bi bi-arrow-right"></i>Privacy</a></li>
-                    <li><a href="/contact"><i class="bi bi-arrow-right"></i>Contact</a></li>
-                    <li><a href=/cancellation><i class="bi bi-arrow-right"></i>Cancellation</a></li>
-                    <li><a href="/shipping"><i class="bi bi-arrow-right"></i>Shipping</a></li>
-                </ul>
+            <div class="copyright">
+                <p>&copy; 2025 KS Digital Services. All rights reserved.</p>
             </div>
-            
-            <div>
-                <h3 class="footer-heading">Contact Us</h3>
-                <ul class="footer-links">
-                    <li><a href="tel:7893845696"><i class="bi bi-telephone"></i>+91 7893845696</a></li>
-                    <li><a href="/cdn-cgi/l/email-protection#d6bda5b2bfb1bfa2b7bae4e6e4e396b1bbb7bfbaf8b5b9bb"><i class="bi bi-envelope"></i><span class="__cf_email__" data-cfemail="1c776f78757b75687d702e2c2e295c7b717d7570327f7371">[email&#160;protected]</span></a></li>
-                    <li><a href="https://maps.app.goo.gl/AyuLvmf3TYjp9fH6A" target="_blank"><i class="bi bi-geo-alt"></i>Hyderabad, Telangana</a></li>
-                    <li><a href="#"><i class="bi bi-clock"></i>Mon-Sat: 7:00 AM - 9:30 PM</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2025 KS Digital Services. All rights reserved.</p>
         </div>
     </footer>
     
@@ -1331,93 +706,27 @@
         <i class="bi bi-whatsapp"></i>
     </a>
     
-    <!-- Bootstrap & Particles JS -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Initialize particles
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof particlesJS === 'function') {
-                particlesJS("particles-js", {
-                    particles: {
-                        number: { value: 50, density: { enable: true, value_area: 800 } },
-                        color: { value: "#4cc9f0" },
-                        shape: { type: "circle" },
-                        opacity: { value: 0.4, random: true },
-                        size: { value: 2.5, random: true },
-                        line_linked: {
-                            enable: true,
-                            distance: 120,
-                            color: "#4361ee",
-                            opacity: 0.15,
-                            width: 1
-                        },
-                        move: {
-                            enable: true,
-                            speed: 0.8,
-                            direction: "none",
-                            random: true,
-                            straight: false,
-                            out_mode: "out",
-                            bounce: false
-                        }
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: {
-                            onhover: { enable: true, mode: "grab" },
-                            onclick: { enable: true, mode: "push" },
-                            resize: true
-                        },
-                        modes: {
-                            grab: { distance: 120, line_linked: { opacity: 0.3 } },
-                            push: { particles_nb: 3 }
-                        }
-                    },
-                    retina_detect: true
-                });
-            }
-            
-            // Fade in animation for sections
-            const fadeElements = document.querySelectorAll('.service-card, .testimonial-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            fadeElements.forEach(element => {
-                element.style.opacity = "0";
-                element.style.transform = "translateY(20px)";
-                element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-                observer.observe(element);
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"77d224da7e024f1bac9a7adae093ddf3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
