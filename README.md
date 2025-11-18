@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -243,20 +244,21 @@
             border-color: rgba(76,201,240,.5)
         }
         .card-img {
-            height: 550px;
+            height: 200px;
             overflow: hidden;
-            position: relative
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
         }
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .5s ease;
-            background: linear-gradient(135deg, #3a0ca3, #4cc9f0);
-            display: block;
+        .card-img .service-icon {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
         }
-        .service-card:hover .card-img img {
-            transform: scale(1.08)
+        .service-card:hover .card-img {
+            background: var(--gradient-secondary);
         }
         .card-content {
             padding: 1.8rem
@@ -801,6 +803,34 @@
             }
         }
         
+        /* Hero Section Enhancements */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.8) 100%);
+        }
+        
+        .hero-btns .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+        }
+        
+        .hero-btns .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+        }
+        
+        .hero-btns .btn-outline-light {
+            border: 2px solid rgba(255,255,255,0.3);
+            color: var(--color-text-light);
+        }
+        
+        .hero-btns .btn-outline-light:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 3rem
@@ -909,6 +939,21 @@
         </div>
     </nav>
     
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Digital Solutions</h1>
+            <p class="hero-subtitle">Your trusted partner for all digital documentation and certification needs. Fast, reliable, and professional services.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="https://wa.me/7893845696" target="_blank" class="btn btn-outline-light">Contact Us</a>
+            </div>
+        </div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </section>
+    
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
@@ -922,11 +967,13 @@
                 <!-- Passport Application -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="passport.webp" alt="Passport" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-passport"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Passport Application</h3>
+                        <p>Fast and reliable passport application services with expert guidance.</p>
                         <div class="d-flex gap-2">
                             <a href="/passport" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -941,11 +988,13 @@
                 <!-- Marriage Certificate -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="marriage-certificate.webp" alt="Marriage Certificate" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Marriage Certificate</h3>
+                        <p>Official marriage certificate services with quick processing.</p>
                         <div class="d-flex gap-2">
                             <a href="/marriage" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -960,11 +1009,13 @@
                 <!-- Birth Certificate -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="birth-certificate.webp" alt="Birth Certificate" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-person-vcard"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Birth Certificate</h3>
+                        <p>Get your official birth certificate quickly and easily.</p>
                         <div class="d-flex gap-2">
                             <a href="/birth" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -979,11 +1030,13 @@
                 <!-- Food License -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="food-license.jpeg" alt="Food License" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-cup-straw"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Food License</h3>
+                        <p>FSSAI food license registration for restaurants and food businesses.</p>
                       <div class="d-flex gap-2">
                             <a href="/foodLicense" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -998,11 +1051,13 @@
                 <!-- Trade License -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="trade-license.webp" alt="Trade License" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Trade License</h3>
+                        <p>Trade license registration for commercial establishments.</p>
                         <div class="d-flex gap-2">
                             <a href="/tradeLicense" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -1017,11 +1072,13 @@
                 <!-- Labour License -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="labour-license.webp" alt="Labour License" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-person-gear"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Labour License</h3>
+                        <p>Labor license registration for businesses with employees.</p>
                         <div class="d-flex gap-2">
                             <a href="/labourLicense" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -1036,11 +1093,13 @@
                 <!-- MSME Certificate -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="msme-certificate.webp" alt="MSME Certificate" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">UDYAM Certificate</h3>
+                        <p>MSME/UDYAM registration for small and medium enterprises.</p>
                         <div class="d-flex gap-2">
                             <a href="/msme" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -1055,11 +1114,13 @@
                 <!-- Voter id Card -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="voter-id.webp" alt="Voter ID">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">VOTER ID CARD</h3>
+                        <p>Voter ID card application and updates with quick processing.</p>
                         <div class="d-flex gap-2">
                             <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Apply%20for%20Voter%20ID" target="_blank" class="card-btn btn btn-secondary">
                                 <i class="bi bi-whatsapp me-2"></i>Apply
@@ -1071,11 +1132,13 @@
                 <!-- PAN Card -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="pan-card.webp" alt="PAN Card" loading="lazy">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-credit-card"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">PAN CARD</h3>
+                        <p>PAN card application and correction services with fast delivery.</p>
                         <div class="d-flex gap-2">
                             <a href="/pancard" class="card-btn btn btn-primary">
                                 <i class="bi bi-info-circle me-2"></i>Details
@@ -1090,11 +1153,13 @@
                 <!-- Aadhar Card -->
                 <div class="service-card">
                     <div class="card-img">
-                        <img class="lazy" data-src="aadhar-card.jpg" alt="Aadhar Card">
-                        <div class="skeleton" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
+                        <div class="service-icon">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">AADHAR ADDRESS UPDATE</h3>
+                        <p>Aadhar card address update and correction services.</p>
                         <div class="d-flex gap-2">
                             <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20Update%20My%20Aadhar%20Address" target="_blank" class="card-btn btn btn-secondary">
                                 <i class="bi bi-whatsapp me-2"></i>Apply
@@ -1110,7 +1175,7 @@
                         <ul class="service-list">
                             <li><i class="bi bi-bus-front"></i> Bus Ticket Booking</li>
                             <li><i class="bi bi-train-front"></i> Train Ticket Booking</li>
-                            <li><i class="bi bi-bus-front"></i> TTD  Bookings</li>
+                            <li><i class="bi bi-bus-front"></i> TTD Bookings</li>
                         </ul>
                         <div class="d-flex gap-2">
                             <a href="https://wa.me/7893845696?text=Hi%20I%20want%20to%20book%20travel%20tickets" target="_blank" class="card-btn btn btn-secondary">
@@ -1271,52 +1336,8 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     
     <script>
-        // Lazy loading for images
+        // Initialize particles
         document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-            let lazyImageObserver;
-            
-            if ("IntersectionObserver" in window) {
-                lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            const lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.add("loaded");
-                            lazyImageObserver.unobserve(lazyImage);
-                            
-                            // Remove skeleton after image loads
-                            const skeleton = lazyImage.nextElementSibling;
-                            if (skeleton && skeleton.classList.contains("skeleton")) {
-                                setTimeout(() => {
-                                    skeleton.style.opacity = "0";
-                                    setTimeout(() => {
-                                        skeleton.remove();
-                                    }, 400);
-                                }, 300);
-                            }
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            } else {
-                // Fallback for browsers without IntersectionObserver
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.add("loaded");
-                    
-                    // Remove skeleton
-                    const skeleton = lazyImage.nextElementSibling;
-                    if (skeleton && skeleton.classList.contains("skeleton")) {
-                        skeleton.remove();
-                    }
-                });
-            }
-            
-            // Load particles only when needed
             if (typeof particlesJS === 'function') {
                 particlesJS("particles-js", {
                     particles: {
@@ -1378,12 +1399,21 @@
                 observer.observe(element);
             });
             
-            // Highlight active service in navigation bar
-            const serviceLinks = document.querySelectorAll('.service-link');
-            serviceLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    serviceLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         });
